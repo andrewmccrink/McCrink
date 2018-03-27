@@ -1,0 +1,722 @@
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('proximanova-black-webfont.eot');
+    src: url('proximanova-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-black-webfont.woff2') format('woff2'),
+         url('proximanova-black-webfont.woff') format('woff'),
+         url('proximanova-black-webfont.ttf') format('truetype'),
+         url('proximanova-black-webfont.svg#proximanova-extrabold-webfont') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('proximanova-extrabold-webfont.eot');
+    src: url('proximanova-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-extrabold-webfont.woff2') format('woff2'),
+         url('proximanova-extrabold-webfont.woff') format('woff'),
+         url('proximanova-extrabold-webfont.ttf') format('truetype'),
+         url('proximanova-extrabold-webfont.svg#proximanova-extrabold-webfont') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('proximanova-bold-webfont.eot');
+    src: url('proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-bold-webfont.woff2') format('woff2'),
+         url('proximanova-bold-webfont.woff') format('woff'),
+         url('proximanova-bold-webfont.ttf') format('truetype'),
+         url('proximanova-bold-webfont.svg#proximanova-bold-webfont') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('proximanova-semibold-webfont.eot');
+    src: url('proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-semibold-webfont.woff2') format('woff2'),
+         url('proximanova-semibold-webfont.woff') format('woff'),
+         url('proximanova-semibold-webfont.ttf') format('truetype'),
+         url('proximanova-semibold-webfont.svg#proximanova-semibold-webfont') format('svg');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('proximanova-regular-webfont.eot');
+    src: url('proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-regular-webfont.woff2') format('woff2'),
+         url('proximanova-regular-webfont.woff') format('woff'),
+         url('proximanova-regular-webfont.ttf') format('truetype'),
+         url('proximanova-regular-webfont.svg#proximanova-regular-webfont') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('proximanova-light-webfont.eot');
+    src: url('proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-light-webfont.woff2') format('woff2'),
+         url('proximanova-light-webfont.woff') format('woff'),
+         url('proximanova-light-webfont.ttf') format('truetype'),
+         url('proximanova-light-webfont.svg#proximanova-light-webfont') format('svg');
+    font-weight: 200;
+    font-style: normal;
+
+}
+
+body {
+  font-family: 'ProximaNova', sans-serif;
+  margin: 0;
+  letter-spacing: 1px;
+  overflow-x: hidden;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.about_icon {
+    display: none;
+    position: absolute;
+    right: 53px;
+    top: 46px;
+    cursor: pointer;
+    z-index: 12;
+    position: fixed;
+    text-decoration: none;
+}
+
+.about_icon p {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: transform .5s;
+}
+
+.about_icon p:hover {
+  transform: translateY(-3px);
+}
+
+
+.noScroll {
+  overflow: hidden !important;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center center;
+  background-image: url('home_hero_laptop.jpg');
+  background-color: black;
+  height: 100vh;
+  min-height: 550px;
+  /*background-color: #548ec4f0;*/
+  background-blend-mode: multiply;
+  background-size: cover;
+  transition: background-image .5s, background-color 1s ;
+}
+
+.hero_content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /*background-color: #2b547a9c;*/
+  top: 0;
+  display: none;
+  transition: background-color 2s;
+}
+
+.overlay p {
+  /*display: none;*/
+  color: white;
+  margin-top: 23px;
+  font-weight: lighter;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.overlay img {
+  /*display: none;*/
+  margin-top: 100px;
+  height: auto;
+  width: 6%;
+  min-width: 76px;
+  cursor: pointer;
+  transition: width .5s, margin 1.5s;
+  -webkit-animation: bounce 3s infinite ease-in-out;
+}
+
+@-webkit-keyframes bounce {
+  30%, 70%  { -webkit-transform: translateY(0); }
+    
+  50% { -webkit-transform: translateY(-10px); }
+}
+
+.overlay img:hover {
+  width: 9.5%;
+}
+
+.works {
+  display: none;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: absolute;
+  z-index: 14;
+  width: 67%;
+  height: 100%;
+  top: 100px;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title {
+  position: absolute;
+  font-weight: 100;
+  letter-spacing: 3px;
+  /*color: #548ec4;*/
+  color: white;
+  bottom: 46px;
+  font-size: 11px;
+  text-align: center;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  display: none;
+}
+
+h1.title {
+  font-size: 13px;
+  text-transform: uppercase;
+  bottom: 71px;
+  font-weight: 400;
+}
+
+#work {
+  display: none;
+  position: relative;
+}
+
+
+.work {
+  height: 100vh;
+  width: 100%;
+  min-height: 550px;
+  position: relative;
+  background-blend-mode: multiply;
+  background-color: #000000e3;
+  transition: background-color 2s;
+}
+
+.work .art {
+  width: 40%;
+  min-width: 330px;
+  max-width: 700px;
+  position: absolute;
+  left: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  margin-top: 200px;
+}
+
+.work.right .art {
+  left: auto;
+  right: 75px;
+}
+
+.work img.laptop {
+  width: 100%;
+  position: relative;
+}
+
+.move_up {
+  margin-top: 0px !important;
+  transition: margin-top 1s !important;
+}
+
+.scroll_down {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.worktop {
+    height: 66%;
+    position: absolute;
+    left: 3.3%;
+    width: 93%;
+    min-width: 303px;
+    max-width: 700px;
+    overflow: hidden;
+    top: 4.6%;
+    /* transform: translateY(-50%); */
+    overflow-y: auto;
+    z-index: 3;
+}
+
+.worktop img {
+    width: 100%;
+    min-width: 330px;
+    max-width: 700px;
+}
+
+.work .text_box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 23%;
+  color: white;
+  display: none;
+}
+
+.work.right .text_box {
+  left: 15%;
+  color: white;
+  display: none;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.work h2 {
+  font-weight: 500;
+  letter-spacing: 2px;
+  max-width: 300px;
+  font-size: 27px;
+}
+
+.lmj {
+  background-image: url('lmj_hero.png');
+  background-size: cover;
+}
+
+.lmj_color {
+  background-color: #dbb768;
+}
+
+.nissoni {
+  background-image: url('nissoni_hero.png');
+  background-size: cover;
+}
+
+.nissoni_color {
+  background-color: #f52839;
+}
+
+.yoga {
+  background-image: url('yoga_hero.png');
+  background-size: cover;
+}
+
+.yoga_color {
+  background-color: #616a91;
+}
+
+.kaws {
+  background-image: url('kaws_hero.png');
+  background-size: cover;
+}
+
+.kaws_color {
+  background-color: #222;
+}
+
+.bbc {
+  background-image: url('bbc_hero.jpg');
+  background-size: cover;
+}
+
+.bbc_color {
+  background-color: #fdc944;
+}
+
+.urock {
+  background-image: url('urock_hero.jpg');
+  background-size: cover;
+}
+
+.urock_color {
+  background-color: #6a4e90;
+}
+
+.popshap {
+  background-image: url('popshap_hero.jpg');
+  background-size: cover;
+}
+
+.popshap_color {
+  background-color: #2aa1c2;
+}
+
+.cliff {
+  background-image: url('cliff_hero.jpg');
+  background-size: cover;
+}
+
+.cliff_color {
+  background-color: #ec6f51;
+}
+
+.bitcoin {
+  background-image: url('bitcoin_hero.jpg');
+  background-size: cover;
+}
+
+.bitcoin_color {
+  background-color: #23a3f8;
+}
+
+.sol {
+  background-image: url('sol_hero.jpg');
+  background-size: cover;
+}
+
+.sol_color {
+  background-color: #bd3a68;
+}
+
+.sm2 {
+  background-image: url('sm2_hero.jpg');
+  background-size: cover;
+}
+
+.sm2_color {
+  background-color: #ee3834;
+}
+
+.ama {
+  background-image: url('ama_hero.jpg');
+  background-size: cover;
+}
+
+.ama_color {
+  background-color: #1369bb;
+}
+
+.getbox {
+  background-image: url('getbox_hero.jpg');
+  background-size: cover;
+}
+
+.getbox_color {
+  background-color: #00395b;
+}
+
+.crg {
+  background-image: url('crg_hero.png');
+  background-size: cover;
+}
+
+.crg_color {
+  background-color: #ee9900;
+}
+
+.dji {
+  background-image: url('dji_hero.png');
+  background-size: cover;
+}
+
+.dji_color {
+  background-color: #3aaaeb;
+}
+
+.bellaVita {
+  background-image: url('bellaVita_hero.png');
+  background-size: cover;
+}
+
+.bellaVita_color {
+  background-color: #d3647f;
+}
+
+.introduction {
+  background-image: url('introduction_hero.png');
+  background-size: cover;
+}
+
+.introduction_color {
+  background-color: #219cd5;
+}
+
+.arrow {
+  width: 30px;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform .3s
+}
+
+.arrow:hover {
+  transform: translateY(-3px);
+}
+
+.down {
+  /*-webkit-animation: bounce 6s infinite ease-in-out;*/
+}
+
+.arrows {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrows a {
+  display: flex;
+  /* height: 0; */
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.period {
+  margin-right: 10px;
+}
+
+
+
+/*  =================  aBOUT PAGE  ===================*/
+
+.about.hero {
+  background-position: center right;
+  background-image: url('home_hero3.jpg');
+  background-blend-mode: multiply;
+  /*background-color: #548ec4f0;*/
+}
+
+.top_margin {
+  margin-top: 200px !important;
+}
+
+.about_title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  padding-left: 10%;
+  display: none;
+  height:  calc(100vh - 100px) ;
+  min-height: 550px;
+  padding-bottom: 100px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.about_info p {
+  color: #3991ca;
+  display: none;
+  margin-top: 200px;
+  transition: margin 2s;
+}
+
+h1.about_name {
+  margin-top: 400px;
+  color: white;
+  text-transform: uppercase;
+  transition: margin-top 2s;
+}
+
+h2.about_job {
+  color: white;
+  font-weight: 100;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 55px;
+}
+
+p.description {
+  color: white;
+  white-space: pre-wrap;
+  padding-right: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  line-height: 1.7;
+}
+
+.about_bio {
+  margin-top: 600px;
+  transition: margin-top 2s;
+  display: none;
+  padding-left: 50px;
+}
+
+p.description span {
+  color: #3991ca;
+  font-weight: normal;
+  font-size: 20px;
+  margin-bottom: 50px;
+  position: relative;
+  top: -15px;
+  text-transform: uppercase;
+}
+
+.next.arrow {
+  margin-top: 230px;
+  display: none ;
+}
+
+.bio_top {
+  margin-top: 250px;
+}
+
+
+
+@media ( max-width: 1100px ) {
+  .work .text_box {
+    right: 13%;
+    transition: all .3s;
+  }
+}
+
+@media ( max-width: 900px ) {
+  .work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-position: center;
+  }
+
+  .work .art, .work .text_box {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    text-align: center;
+    min-width: 300px;
+    transform: none;
+  }
+
+  .work .art {
+    margin-bottom: 25px;
+  }
+
+  .worktop {
+    min-width: 282px;
+  }
+
+  .worktop img {
+    min-width: 272px;
+  }
+
+  .overlay p {
+    font-weight: normal;
+  }
+
+/*  .work .text_box {
+    position: relative;
+  }*/
+}
+
+@media ( max-width: 800px ) {
+/*  .about_title {
+    padding-left: 30px;
+    padding-right: 30px;
+  }*/
+
+  .about_title {
+    padding: 0;
+  }
+
+  p.description {
+    padding: 20px;
+  }
+
+  .top_margin {
+    margin-top: 200px !important;
+  }
+
+  h1.about_name {
+    font-size: 25px;
+    padding-left: 30px;
+  }
+
+  h2.about_job {
+    font-size: 15px;
+    padding-left: 30px;
+  }
+
+}
+
+
+@media only screen 
+  and (max-device-width: 767px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  
+  .overlay img {
+    width: 6%;
+    min-width: 43px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  .text_box p {
+    font-size: 14px;
+  }
+
+  .hero {
+    background-image: url('home_hero_laptop_m.jpg')
+  }
+
+  .about.hero {
+    background-image: url('home_hero_me_m.jpg')
+  }
+
+  .top_margin {
+    margin-top: 135px !important;
+  }
+
+  .about_info p, .next.arrow, .about_bio {
+    padding-left: 30px;
+  }
+
+  .bio_top {
+  margin-top: 150px;
+}
+
+  h2.about_job, p.description  {
+    font-weight: 300;
+  }
+
+  .overlay p {
+    margin-top: 17px;
+    font-size: 10px;
+  }
+}
+
